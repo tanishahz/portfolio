@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalized A to Z Messages</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #e0f7fa;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            color: #00796b;
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+            margin: 20px;
+            border: 2px solid #00796b;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #00796b;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        button:hover {
+            background-color: #004d40;
+        }
+        .message {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Get Your Personalized Message!</h1>
+    <input type="text" id="nameInput" placeholder="Enter your name" />
+    <button onclick="showMessage()">Get Message</button>
+    <div class="message" id="personalizedMessage"></div>
+
+    <script>
+        function showMessage() {
+            const name = document.getElementById('nameInput').value.trim();
+            const firstLetter = name.charAt(0).toUpperCase();
+            let firstMessage = '';
+            const generalMessages = [
+                "✨ Best of luck in all your endeavors!",
+                "❤️ May love and happiness always find you!",
+                "🌈 Embrace self-love; you are amazing just the way you are!",
+                "😊 Keep smiling, your positivity is infectious!",
+                "💪 Believe in yourself; you can do anything!"
+            ];
+
+            // Define specific messages for A-Z
+            switch (firstLetter) {
+                case 'A':
+                    firstMessage = "🌼 A is for Ambition! Always pursue your goals!";
+                    break;
+                case 'B':
+                    firstMessage = "💪 B is for Bravery! Face life with courage!";
+                    break;
+                case 'C':
+                    firstMessage = "🌟 C is for Confidence! Trust in your abilities!";
+                    break;
+                case 'D':
+                    firstMessage = "❤️ D is for Determination! Never give up!";
+                    break;
+                case 'E':
+                    firstMessage = "🍀 E is for Enthusiasm! Keep your spirit high!";
+                    break;
+                // Add messages for other letters as needed
+                case 'F':
+                    firstMessage = "😊 F is for Friendship! Cherish your connections!";
+                    break;
+                case 'G':
+                    firstMessage = "🌈 G is for Gratitude! Appreciate the little things!";
+                    break;
+                case 'H':
+                    firstMessage = "🌟 H is for Hope! Always look towards the light!";
+                    break;
+                case 'I':
+                    firstMessage = "💖 I is for Inspiration! Be the light for others!";
+                    break;
+                case 'J':
+                    firstMessage = "🌼 J is for Joy! Find happiness in every moment!";
+                    break;
+                // Continue with K-Z as needed
+                case 'K':
+                    firstMessage = "🎉 K is for Kindness! Spread love wherever you go!";
+                    break;
+                case 'L':
+                    firstMessage = "💖 L is for Love! Open your heart to all!";
+                    break;
+                case 'M':
+                    firstMessage = "🌻 M is for Motivation! Keep pushing forward!";
+                    break;
+                case 'N':
+                    firstMessage = "🌈 N is for Nurture! Care for yourself and others!";
+                    break;
+                case 'O':
+                    firstMessage = "🌞 O is for Optimism! Choose to see the good!";
+                    break;
+                case 'P':
+                    firstMessage = "💫 P is for Passion! Follow what makes you happy!";
+                    break;
+                case 'Q':
+                    firstMessage = "✨ Q is for Quality! Seek quality in all you do!";
+                    break;
+                case 'R':
+                    firstMessage = "🌈 R is for Resilience! Stand tall through challenges!";
+                    break;
+                case 'S':
+                    firstMessage = "😊 S is for Sunshine! Shine your light bright!";
+                    break;
+                case 'T':
+                    firstMessage = "🌟 T is for Triumph! Celebrate your victories!";
+                    break;
+                case 'U':
+                    firstMessage = "🌼 U is for Uniqueness! Embrace what makes you special!";
+                    break;
+                case 'V':
+                    firstMessage = "❤️ V is for Victory! Every step forward is a win!";
+                    break;
+                case 'W':
+                    firstMessage = "🌻 W is for Wisdom! Learn from every experience!";
+                    break;
+                case 'X':
+                    firstMessage = "✨ X is for X-factor! You have something special!";
+                    break;
+                case 'Y':
+                    firstMessage = "🌈 Y is for Youth! Keep your heart young!";
+                    break;
+                case 'Z':
+                    firstMessage = "🌟 Z is for Zeal! Approach life with energy!";
+                    break;
+                default:
+                    firstMessage = "🌟 You are special and deserving of the best!";
+            }
+
+            const completeMessage = `${firstMessage}\n\n${generalMessages.join('\n')}`;
+            document.getElementById('personalizedMessage').innerText = completeMessage;
+            document.getElementById('personalizedMessage').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
